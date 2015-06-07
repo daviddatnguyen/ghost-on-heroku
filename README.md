@@ -10,6 +10,33 @@ To get your own Ghost blog running on Heroku, click the button below:
 
 Fill out the form, and you should be cooking with gas in a few seconds.
 
+### Launch it with Heroku CLI
+
+If you do not want to use the above button to setup your app, follow the instructions below:
+
+- Clone this repo into a local directory
+
+  ```sh
+  git clone https://github.com/daviddatnguyen/ghost-on-heroku.git DIRECTORY_NAME
+  ```
+- Using [Heroku's CLI](https://devcenter.heroku.com/articles/heroku-command), create a new app and deploy the app to heroku
+  
+  ```sh
+  heroku create YOURAPPNAME
+  git push heroku master
+  ```
+- Log into Heroku
+- Under your app's resources, add `Mandrill by MailChimp` and `Heroku Postgres`
+- Create the following Config Variables (under Settings)
+  
+  ```
+  HEROKU_URL - http://YOURAPPNAME.herokuapp.com
+  S3_ACCESS_KEY_ID - (blank)
+  S3_ACCESS_SECRET_KEY - (blank)
+  S3_BUCKET_NAME - (blank)
+  ```
+- Launch your Heroku app and set it up by going to `YOURAPPNAME.herokuapp.com/ghost`
+
 ### Things you should know
 
 - After deployment, visit the admin area at `YOURAPPNAME.herokuapp.com/ghost` to set up your blog.
